@@ -12,7 +12,7 @@ class Train {
   register (wagon) {
     if (!wagon) throw Error ('Wagon is empty')
     if (!wagon.register) throw Error('Wagon has no register method. ', wagon)
-    this.wagons(wagon.name) = this.trains.register.length
+    this.wagons[wagon.name] = this.trains.register.length
     for (const name of this.trainNames) {
       if (wagon[train]) this.trains[name].push(wagon)
     }
