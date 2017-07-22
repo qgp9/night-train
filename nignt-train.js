@@ -21,7 +21,7 @@ class Train {
   async run (trainname, goods) {
     for (wagon of this.trains[trainname]) {
       await wagon[trainname](goods)
-        .catch(e => { console.error(`Eorros of wagon ${wagon.name} in train ${tranname}.`); throw Error })
+        .catch(e => { console.error(`Erros of wagon ${wagon.name} in train ${tranname}.`); throw Error })
     }
   }
 }
