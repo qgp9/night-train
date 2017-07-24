@@ -1,0 +1,23 @@
+{
+  "name": "night-train",
+  "version": "0.0.1",
+  "description": "Simple plugin system",
+  "main": "nignt-train.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qgp9/night-train.git"
+  },
+  "keywords": [
+    "plugin",
+    "train"
+  ],
+  "author": "qgp9 <pauljang9@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qgp9/night-train/issues"
+  },
+  "homepage": "https://github.com/qgp9/night-train#readme"
+}
