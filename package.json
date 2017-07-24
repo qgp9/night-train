@@ -1,6 +1,6 @@
 {
   "name": "night-train",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple plugin system",
   "main": "nignt-train.js",
   "scripts": {
