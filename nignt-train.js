@@ -1,4 +1,5 @@
 'use strict'
+const debug = require('debug')('night-train')
 
 function ERROR (...args) {
   return function (err) {
@@ -22,18 +23,23 @@ class Train {
   }
 
   register (wagon) {
+    debug('Register trains')
     if (!wagon) throw Error ('Wagon is empty')
-    if (!wagon[REGISTER]) throw Error('Wagon has no register method. ', wagon)
+    if (!wagon[REGISTER]) ERROR('Wagon has no register method. ', wagon)
     const index = this.trains[REGISTER].length
     this.wagons[wagon.name] = index
     this.trains.register.push([index, wagon])
     for (const name of this.trainNames) {
       if (name === REGISTER) continue
-      if (wagon[name]) this.trains[name].push([index, wagon])
+      if (wagon[name]) {
+        this.trains[name].push([index, wagon])
+        debug(wagon.name, 'is registered to', name)
+      }
     }
   }
 
   async run (trainname, goods) {
+    debug('Train runs.', trainname)
     for (const index in this.trains[trainname]) {
       const wagonInfo = this.trains[trainname][index]
       const registerIndex = wagonInfo[0]
@@ -49,6 +55,7 @@ class Train {
   }
 
   async runAsync (trainname, goods) {
+    debug('Train runs in async mode.', trainname)
     const plist = []
     for (const index in this.trains[trainname]) {
       const wagonInfo = this.trains[trainname][index]

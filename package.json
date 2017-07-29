@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/qgp9/night-train/issues"
   },
-  "homepage": "https://github.com/qgp9/night-train#readme"
+  "homepage": "https://github.com/qgp9/night-train#readme",
+  "dependencies": {
+    "debug": "^2.6.8"
+  }
 }
